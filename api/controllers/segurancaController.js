@@ -18,7 +18,7 @@ class SegurancaController {
     const {roleId, permissoes} = req.body
 
     try{
-        const rolePermissoes = await segurancaService.cadastrarPermisssoesRole({roleId, permissoes})
+        const rolePermissoes = await segurancaService.cadastrarPermissoesRole({roleId, permissoes})
         res.status(200).json(rolePermissoes)
     }catch(error){
         res.status(400).json(error.message)

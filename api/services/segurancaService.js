@@ -62,7 +62,7 @@ class SegurancaService {
     });
     return novoUsuario;
   }
-  async cadastrarPermisssoesRole(dto) {
+  async cadastrarRole(dto) {
     const role = await dataBase.roles.findOne({
       include: [
         {
