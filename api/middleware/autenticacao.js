@@ -1,10 +1,11 @@
 const { verify, decode } = require("jsonwebtoken");
-const jsonSecret = require("../api/config/jsonSecret");
+const jsonSecret = require("../config/jsonSecret");
 
-module.exports = async (req, resizeBy, next) => {
+module.exports = async (req, res, next) => {
   const token = req.headers.authorization;
-  if (token) {
-    res.status(401).json("Token não informando");
+  if (!token) {
+    return res.status(401).json("Token não informando");
+    
   }
 
   const [, acessToken] = token.split(" ");
