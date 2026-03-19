@@ -5,6 +5,15 @@ const usuarios = require("./usuariosRoute.js");
 const login = require("../routes/authRoutes.js");
 const role = require("../routes/role.js");
 const permissao = require("../routes/permissao.js");
+const seguranca = require("../routes/seguranca.js");
 module.exports = (app) => {
-  app.use(bodyParser.json(), login, produto, usuarios, role, permissao);
+  app.use(
+    bodyParser.json(),
+    login,
+    produto,
+    usuarios,
+    role,
+    permissao,
+    seguranca,
+  );
 };
