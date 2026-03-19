@@ -39,16 +39,16 @@ class UsuarioController {
       const usuario = await usuarioService.editarUsuario({ id, nome, email });
       res.status(200).json(usuario);
     } catch (error) {
-      res.status(400).send(error.message);
+      res.status(400).json(error.message);
     }
   }
   static async deletarUsuario(req, res) {
     const { id } = req.params;
     try {
       await usuarioService.deletarUsuario(id);
-      res.status(200).send({ message: "Usuario deletado com sucesso!" });
+      res.status(200).json({ message: "Usuario deletado com sucesso!" });
     } catch (error) {
-      res.status(400).send(error.message);
+      res.status(400).json(error.message);
     }
   }
 }
